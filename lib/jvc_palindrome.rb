@@ -1,11 +1,35 @@
 require "jvc_palindrome/version"
 
-class String
+module JvcPalindrome
 
-  # Returns true for a palindrome, false otherwise.
-  def palindrome?
-    processed_content == processed_content.reverse
-  end
+    # Returns true for a palindrome, false otherwise.
+    def palindrome?
+      processed_content == processed_content.reverse
+    end
+
+      private
+
+      # Returns content for palindrome testing.
+      def processed_content
+        self.to_s.scan(/[a-z]/i).join.downcase
+      end
+end
+
+class String
+  include JvcPalindrome
+end
+
+class Integer
+  include JvcPalindrome
+end
+
+
+
+
+
+
+
+
 
   # # Returns the letters of the string
   # def letters
@@ -20,12 +44,3 @@ class String
   #   end
   #   the_letters.join
   # end
-
-    private
-
-    # Returns content for palindrome testing.
-    def processed_content
-      self.scan(/[a-z]/i).join.downcase
-    end
-
-end

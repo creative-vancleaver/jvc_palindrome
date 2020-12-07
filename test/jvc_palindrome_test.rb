@@ -18,6 +18,14 @@ class JvcPalindromeTest < Minitest::Test
     assert "Madam, I'm Adam.".palindrome?
   end
 
+  def test_integer_nonpalindrome
+    refute 12345.palindrome?
+  end
+
+  def test_integer_nonpalindrome
+    assert 12321.palindrome?
+  end
+
   # def test_letters
   #   assert_equal "MadamImAdam", "Madam, I'm Adam.".letters
   # end
