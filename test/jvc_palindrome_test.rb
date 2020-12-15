@@ -30,4 +30,9 @@ class JvcPalindromeTest < Minitest::Test
   #   assert_equal "MadamImAdam", "Madam, I'm Adam.".letters
   # end
 
+  # Assert that a string of spcaes is NOT a palindrome.
+  def test_blank_nonpalindrome
+    refute "".palindrome?
+  end
+
 end
